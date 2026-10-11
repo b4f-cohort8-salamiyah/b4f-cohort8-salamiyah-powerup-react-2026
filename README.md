@@ -1,38 +1,30 @@
-# B4F Cohort 8 — Salamiyah — PowerUp React Catch-Up (2026)
+# B4F Cohort 8 — Salamiyah — PowerUp Catch-Up (2026)
 
-This repository is for the **PowerUp React catch-up track**. It gives you the complete material and
-the real B4F Hub code from the first four React sessions, plus a practice where you rebuild B4F
-Hub's React architecture yourself against the same real Express server.
+This repository is for the **PowerUp catch-up track**. It gives you the real B4F Hub code and the
+complete material for the React sessions and the backend sessions, plus practice and homework that
+you do yourself.
 
-## What we covered on Saturday
+## What we covered
 
-Saturday covered the main ideas of four sessions quickly, in about three hours, using the real
-B4F Hub project:
-
-| Session | Topic                                                      |
-| ------- | ---------------------------------------------------------- |
-| 01      | React Router                                               |
-| 02      | Context                                                    |
-| 03      | Redux Toolkit                                              |
-| 04      | Multiple slices, selectors, and `localStorage` persistence |
-
-Use this repository to go back through each topic slowly, then practise all of it yourself.
+| PowerUp session | Topic                                                            | Main-class sessions |
+| --------------- | ---------------------------------------------------------------- | ------------------- |
+| 01              | React: Router, Context, Redux Toolkit, selectors, `localStorage` | 01–04               |
+| 02              | Backend: how the B4F Hub Node.js + Express server works          | 05 (first part)     |
 
 ## What is inside
 
 ```
 .
 ├── docs/
-│   ├── session-01/ … session-04/   complete material from Sessions 01–04
-│   └── powerup-practice/           your practice instructions
-├── server/                         the real B4F Hub Express server (data for every client)
-├── practice-client/                B4F Hub at the start of Session 01 — you work here
-└── client/                         B4F Hub at the end of Session 04 — the reference
+│   ├── session-01/ … session-04/   complete material from the React sessions
+│   ├── powerup-practice/           PowerUp 01 practice (React)
+│   └── powerup-session-02/         PowerUp 02 guide + homework (backend)
+├── server/                         the real B4F Hub Express server, as explained in PowerUp 02
+├── practice-client/                B4F Hub React app at the start of Session 01 — your React practice
+└── client/                         B4F Hub React app at the end of Session 04 — the React reference
 ```
 
-### `docs/session-01` … `docs/session-04`
-
-The complete material from each session:
+### `docs/session-01` … `docs/session-04` — React material
 
 | Folder             | Files                                                        |
 | ------------------ | ------------------------------------------------------------ |
@@ -41,28 +33,31 @@ The complete material from each session:
 | `docs/session-03/` | `SESSION_GUIDE-EN.pdf`, `TEAMWORK-EN.pdf`, `HOMEWORK-EN.pdf` |
 | `docs/session-04/` | `SESSION_GUIDE-EN.pdf`, `TEAMWORK-EN.pdf`, `HOMEWORK-EN.pdf` |
 
-Read each `SESSION_GUIDE-EN.pdf` first. The teamwork and homework PDFs show what the class
-practised after each session.
+### `docs/powerup-practice/` — React practice
 
-### `docs/powerup-practice/`
+**`POWERUP-PRACTICE-EN.pdf`** — rebuild B4F Hub's React architecture in `practice-client/`.
 
-**`POWERUP-PRACTICE-EN.pdf`** — your practice instructions. Read it before you start.
+### `docs/powerup-session-02/` — backend
+
+- **`SESSION_GUIDE-EN.pdf`** — how the server works: every file, the real endpoints, and requests
+  traced from React to the server and back.
+- **`HOMEWORK-EN.pdf`** — backend homework: you add four new endpoints to `server/index.js`.
 
 ### `server/`
 
-The real B4F Hub Express server — the same one from class. It is already built for you: it serves
-the opportunities and community posts under `/api/...`, keeps its data in memory, and resets to the
-original data every time it restarts. **Run it, but do not change it.**
+The real B4F Hub Node.js + Express server — exactly the code we read in PowerUp Session 02. Almost
+everything lives in one file, `index.js` (the app, the data in memory and every route); `data.js`
+holds the starting data and `test.js` is the small "script vs server" demo. Every client gets its data
+from it. Data lives in memory only and resets every time the server restarts.
 
 ### `practice-client/`
 
-The real B4F Hub React app as it was at the **start of Session 01** — it already loads real data
-from the server with `fetch`, but has no Router, no Context and no Redux yet. This is where you
-rebuild those yourself, following the practice PDF.
+The real B4F Hub React app as it was at the **start of Session 01** — it loads real data from the
+server with `fetch`, but has no Router, no Context and no Redux yet. Your React practice happens here.
 
 ### `client/`
 
-The real B4F Hub React app at the **end of Session 04** — the reference. Try each part yourself
+The real B4F Hub React app at the **end of Session 04** — the React reference. Try each part yourself
 first; read `client/` only when you are stuck.
 
 | Topic                      | Where to look in `client/src/`                                                     |
@@ -92,7 +87,7 @@ npm install
 npm start
 ```
 
-Leave it running.
+Leave it running. After you change server code, stop it (Ctrl+C) and run `npm start` again.
 
 ### Terminal 2 — your practice client (port 5173)
 
@@ -119,12 +114,13 @@ free port, such as 5174 — always open the address Vite prints.)
 
 ## What to work on
 
-1. Review `docs/session-01` … `docs/session-04`.
-2. Rebuild B4F Hub's React architecture inside `practice-client/`, following
-   `docs/powerup-practice/POWERUP-PRACTICE-EN.pdf`: CORE first, then STRETCH, then CHALLENGE.
-3. Before you submit, run `npm run build` and `npm run lint` inside `practice-client/`.
+1. **Backend homework (PowerUp 02):** follow `docs/powerup-session-02/HOMEWORK-EN.pdf`. This is the
+   one task where you change `server/`.
+2. **React practice (PowerUp 01), at your own pace:** rebuild B4F Hub's React architecture inside
+   `practice-client/`, following `docs/powerup-practice/POWERUP-PRACTICE-EN.pdf`. Before you submit,
+   run `npm run build` and `npm run lint` inside `practice-client/`.
 
-Work only inside `practice-client/`. Do not change `server/`, `client/` or `docs/`.
+Do not change `client/` or `docs/`. Change `server/` only for the backend homework.
 
 ## Branch rules
 
